@@ -31,11 +31,11 @@
 
 (define (expand-prefix str)
   (letrec ((loop
-             (lambda (str len acc)
+             (lambda (len acc)
                (if (zero? len)
                  acc
-                 (loop str (- len 1) (cons (substring str 0 len) acc))))))
-    (loop str (string-length str) '())))
+                 (loop (- len 1) (cons (substring str 0 len) acc))))))
+    (loop (string-length str) '())))
 
 (define (choose lst)
   (if (null? lst)
