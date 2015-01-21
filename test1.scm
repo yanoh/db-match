@@ -17,4 +17,11 @@
 (assert-true  'Ex-C (db-match? "aba" "山本山"))
 (assert-true  'Ex-D (db-match? "bab" "山本山"))
 
+(assert-true  'Ex-E (db-match? "" ""))
+(assert-false 'Ex-F (db-match? "a" ""))
+(assert-false 'Ex-G (db-match? "" "dog"))
+(assert-true  'Ex-H (db-match? "a" "dog"))
+(assert-true  'Ex-I (db-match? "a" "dogcat"))
+(assert-true  'Ex-J (db-match? "abccba" "dogcatratratcatdog"))
+
 (exit)
